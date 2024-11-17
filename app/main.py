@@ -1,4 +1,5 @@
 import socket  # noqa: F401
+import time
 
 
 def main():
@@ -11,7 +12,9 @@ def main():
     server_socket.accept() # wait for client
 
     connection, _ = server_socket.accept()
+    time.sleep(60)
     connection.sendall(b"+PONG\r\n")
+    time.sleep(60)
 
 if __name__ == "__main__":
     main()
